@@ -7,8 +7,9 @@
     <title>Document</title>
 </head>
 <style>
-    a{text-decoration: none;}
-    ul,li{list-style:none;}
+    a{text-decoration: none;text-align: center;}
+    ul,li{list-style:none; 
+        padding:0px; margin:0;   border:1px solid green;}
     div {
         border: 1px solid blue;
     }
@@ -22,6 +23,17 @@
     #gnb>ul>li{float: left; margin:0px 10px;}
     div#logo{margin:0 auto; width:200px;}
     div#logo>img{ width:100%;}
+
+    div#main_container{width:1200px; margin:0px auto;overflow: hidden;}
+    .mainmenu{
+        width: 16.35%;
+        float: left;
+    }
+    #main_container:hover .submenu{
+        display:block;
+    }
+    .submenu{display:none;}
+
 </style>
 
 <body>
@@ -41,14 +53,76 @@
             </div>
             <div id="logo">
                 <img src="img/logo.jpg" alt="">
-
             </div>
         </header>
 
      </div>
     <!-- top영역끝 -->
     <!-- --본문영역시작(메인메뉴+슬라이더)----- -->
-     <div id="main_container"></div>
+     <div id="main_container">
+        <ul class="mainmenu">
+            <li>
+                <a href="">캠핑장소개</a>
+                <span class="menu_line"></span>
+                <ul class="submenu">
+                    <li><a href="">인사말</a></li>
+                    <li><a href="">시설보기</a></li>
+                    <li><a href="">오시는길</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="mainmenu">
+            <li>
+                <a href="">사이트보기</a>
+                <span class="menu_line"></span>
+                <ul class="submenu">
+                    <li><a href="">시설물보기</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="mainmenu">
+            <li>
+                <a href="">예약안내</a>
+                <span class="menu_line"></span>
+                <ul class="submenu">
+                    <li><a href="">예약안내</a></li>
+                    <li><a href="">실시간에약</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="mainmenu">
+            <li>
+                <a href="">특별함</a>
+                <span class="menu_line"></span>
+                <ul class="submenu">
+                    <li><a href="">특별함</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="mainmenu">
+            <li>
+                <a href="">인기여행지</a>
+                <span class="menu_line"></span>
+                <ul class="submenu">
+                    <li><a href="">인근여행지</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="mainmenu">
+            <li>
+                <a href="">커뮤니티</a>
+                <span class="menu_line"></span>
+                <ul class="submenu">
+                    <li><a href="">공지사항</a></li>
+                    <li><a href="">고객문의</a></li>
+                    <li><a href="">이용후기</a></li>
+                    <li><a href="">포토갤러리</a></li>
+                </ul>
+            </li>
+        </ul>
+
+
+     </div>
     <!-- --본문영역끝----- -->
     <!-- 본문서브시작 -->
      <div id="sub_container"></div>

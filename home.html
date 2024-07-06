@@ -1,657 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-    <style>
-        div{border:1px solid blue;}
-    </style>
-<body>
+<style>
+    a{text-decoration: none;text-align: center;}
+    ul,li{list-style:none; 
+        padding:0px; margin:0;   border:1px solid green;}
+    div {
+        border: 1px solid blue;
+    }
+    header#title_bar{
+        background-color: yellow;
+        position: relative;
+        /* height: 75px; */
+    }
+    div#gnb{position: absolute; right:20px;}
+    #gnb>ul{ overflow: hidden;}
+    #gnb>ul>li{float: left; margin:0px 10px;}
+    div#logo{margin:0 auto; width:200px;}
+    div#logo>img{ width:100%;}
 
-    <body id="body_id" ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
-        <div id="bg_mask" style="display: none;"></div>
-        <!--wrap 시작----->
-        <div id="wrap">
-          <!--top 영역시작----->
-          <div id="top_container_bg">
-            <header id="top_container">
-              <div id="gnb_wrap">
-                <div id="gnb">
-                  <ul>
-                    <li><a href="#"  >Home</a></li>
-                    <li><a href="#"  >Login</a>
-                    </li>
-                    <li>
-                      <a href="#"  >Join</a>
-                    </li>
-                    <li>
-                      <a href="#"  >Mypage</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <!--로고 시작----->
-              <div id="logo">
-                <h1><a href="#"  title="홈 페이지로 이동"><img src="./logo.jpg" alt="로고"></a>
-                </h1>
-              </div>
-              <!--로고 끝----->
-            </header>
-      
-      
-            <nav>
-              <!--모바일 메뉴 시작----->
-              <h2 id="mob_menu"><img src="./img/youlbit/mob_menu.gif" alt="모바일메뉴"></h2>
-              <!--모바일 메뉴 끝----->
-              <!--메뉴 시작----->
-              <div id="menu" style="right: -100%; display: none; overflow: visible; height: 100%; background: rgb(255, 255, 255); position: fixed;">
-                <div id="menu_wrap">
-                  <div id="mob_gnb">
-                    <ul>
-                      <li><a href="#" >Login</a>
-                      </li>
-                      <li>
-                        <a href="#" >Join</a>
-                      </li>
-                      <li>
-                        <a href="#"  >Mypage</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <ul>
-                    <!--menu_1 시작----->
-                    <li class="mainmenu"><a href="#"  class="pc">캠핑장소개<span class="menu_line"></span></a><a href="#"  class="mob">캠핑장소개</a>
-                      <ul class="submenu">
-                        <li><a href="#" >인사말</a>
-                        </li>
-                        <li><a href="#">시설보기</a>
-                        </li>
-                        <li><a href="#">오시는길</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <!--menu_2 시작----->
-                    <li class="mainmenu"><a href="#" class="pc">사이트보기<span class="menu_line"></span></a><a href="#" class="mob">사이트보기</a>
-                      <ul class="submenu">
-                        <li><a href="#" >사이트보기</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <!--menu_3 시작----->
-                    <li class="mainmenu"><a href="#"  class="pc">예약안내<span class="menu_line"></span></a><a href="#"  class="mob">예약안내</a>
-                      <ul class="submenu">
-                        <li><a href="#" >예약안내</a>
-                        </li>
-                        <li><a href="#" >실시간예약</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <!--menu_4 시작----->
-                    <li class="mainmenu"><a href="#"  class="pc">특별함<span class="menu_line"></span></a><a href="#"   class="mob">특별함</a>
-                      <ul class="submenu">
-                        <li><a href="#"  >특별함</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <!--menu_5 시작----->
-                    <li class="mainmenu"><a href="#" class="pc">인근여행지<span class="menu_line"></span></a><a href="#"  class="mob">인근여행지</a>
-                      <ul class="submenu">
-                        <li><a href="#" >인근여행지</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <!--menu_6 시작----->
-                    <li class="mainmenu mainmenu_end"><a href="#"  class="pc">커뮤니티<span class="menu_line" style="overflow: hidden; width: 0px;"></span></a><a href="#" class="mob">커뮤니티</a>
-                      <ul class="submenu">
-                        <li><a href="#" >공지사항</a>
-                        </li>
-                        <li><a href="#" >고객문의</a>
-                        </li>
-                        <li><a href="#" >이용후기</a>
-                        </li>
-                        <li><a href="#" >포토갤러리</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </nav>
-            <!--메뉴 끝----->
-          </div>
-          <!--top 영역끝----->
-          <!--본문영역시작----->
-          <section id="main_container">
-            <div id="head_title">
-              <span class="head_1">Preview</span>
-              <p class="head_2"><span>아늑한 숲속</span> 캠핑장</p>
-            </div>
-            <div id="main_photo_bg">
-              <ul class="slider_panel" style="left: 0px;">
-                <li class="slider_image"><img src="./1(1).jpg" alt=""></li>
-                <li class="slider_image"><img src="./2(1).jpg" alt=""></li>
-                <li class="slider_image"><img src="./3(1).jpg" alt=""></li>
-                <li class="slider_image"><img src="./1(1).jpg" alt=""></li>
-                <li class="slider_image"><img src="./2(1).jpg" alt=""></li>
-                <li class="slider_image"><img src="./3(1).jpg" alt=""></li>
-              <li class="slider_image"><img src="./1(1).jpg" alt=""></li><li class="slider_image"><img src="./2(1).jpg" alt=""></li><li class="slider_image"><img src="./3(1).jpg" alt=""></li><li class="slider_image"><img src="./1(1).jpg" alt=""></li><li class="slider_image"><img src="./2(1).jpg" alt=""></li><li class="slider_image"><img src="./3(1).jpg" alt=""></li></ul>
-              <div class="control_panel">
-                <div class="control_btn active" data-index="0"></div>
-                <div class="control_btn" data-index="1"></div>
-                <div class="control_btn" data-index="2"></div>
-              </div>
-              <div class="direct_btn">
-                <div class="left_btn">
-                  <img src="./left_btn.png">
-                </div>
-                <div class="right_btn">
-                  <img src="./right_btn.png">
-                </div>
-              </div>
-            </div>
-          </section>
-          <!--본문영역끝----->
-          <div id="main_quick_bg">
-            <div id="main_quick">
-              <div class="quick_01">
-                <a href="#" ><i class="fa fa-map-signs fa-4x"></i></a>
-                <h3>Location</h3>
-                <p>오시는 길 안내</p>
-              </div>
-              <div class="quick_02">
-                <a href="#" ><i class="fa fa-clock-o fa-4x"></i></a>
-                <h3>Reservation</h3>
-                <p>캠핑장 예약하기</p>
-              </div>
-              <div class="quick_03">
-                <a href="#" ><i class="fa fa-camera-retro fa-4x"></i></a>
-                <h3>Campsite</h3>
-                <p>캠핑장 사이트보기</p>
-              </div>
-              <div class="quick_04">
-                <a href="#" ><i class="fa fa-gift fa-4x"></i></a>
-                <h3>Special</h3>
-                <p>특별한 서비스</p>
-              </div>
-              <div class="quick_05">
-                <a href="#" ><i class="fa fa-bicycle fa-4x"></i></a>
-                <h3>Tour info</h3>
-                <p>인근여행지</p>
-              </div>
-              <div class="quick_06">
-                <a href="#" ><i class="fa fa-newspaper-o fa-4x"></i></a>
-                <h3>Q&amp;A</h3>
-                <p>고객문의</p>
-              </div>
-            </div>
-          </div>
-          <section id="main_body_bg">
-            <div id="main_body">
-              <div id="main_left">
-                <!-- 공지사항 영역시작----->
-                <div id="notice">
-                  <dl>
-                    <dt><span class="board_title">공지사항</span> <span class="more"><a href="#" >더보기 +</a></span>
-                    </dt>
-                    <dd>
-                      <!-- 게시판 시작 --------------------------------------------------------->
-                      <link rel="StyleSheet" href=".css/board_1.css" type="text/css">
-      
-      
-                      <table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" background="#" class="board_output">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <table border="0" cellspacing="0" cellpadding="0" width="100%" id="board_output">
-                                <tbody>
-                                  <tr class="board_output_1_tr">
-                                    <td width="1%"><img alt="" src="./output_ol.gif" border="0" align="absmiddle"></td>
-                                    <td width="71%" style="word-break:break-all;overflow:hidden;" class="bd_out1"><a href="#" >웹표준으로
-                                        제작되어 스마트폰에서도 이상.. </a> </td>
-                                    <td align="center" style="word-break:break-all;overflow:hidden;">2014-11-25</td>
-                                  </tr>
-                                  <tr class="board_output_1_tr">
-                                    <td width="1%"><img alt="" src="./output_ol.gif" border="0" align="absmiddle"></td>
-                                    <td width="71%" style="word-break:break-all;overflow:hidden;" class="bd_out1"><a href="#" >타업종에서도
-                                        이용이 가능하며, 그 경우 사.. </a> </td>
-                                    <td align="center" style="word-break:break-all;overflow:hidden;">2014-11-25</td>
-                                  </tr>
-                                  <tr class="board_output_1_tr">
-                                    <td width="1%"><img alt="" src="./output_ol.gif" border="0" align="absmiddle"></td>
-                                    <td width="71%" style="word-break:break-all;overflow:hidden;" class="bd_out1"><a href="#" >펜션,
-                                        게스트하우스, 민박등의 업종에 적합.. </a> </td>
-                                    <td align="center" style="word-break:break-all;overflow:hidden;">2014-11-25</td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </td>
-                          </tr>
-                          <!--more-->
-                        </tbody>
-                      </table>
-                      <!-- 게시판 끝---------------------------------------------------------------------------------------->
-                    </dd>
-                  </dl>
-                </div>
-                <!-- 공지사항 영역끝----->
-              </div>
-              <div id="main_right">
-                <!-- 고객센터 영역시작----->
-                <div id="contact_ban">
-                  <dl>
-                    <dt>고객센터</dt>
-                    <dd>전화상담 가능시간 : 오전 09시 ~ 오후 06시</dd>
-                    <dd><i class="fa fa-phone fa-2x"></i> <span class="phone_no">070-000-0000</span></dd>
-                    <dd><span class="bank_no">농협 000-0000-00000-00 000</span></dd>
-      
-                  </dl>
-                </div>
-                <!-- 고객센터 영역끝----->
-                <!-- 고객문의 영역시작----->
-                <div id="qna">
-                  <dl>
-                    <dt><span class="board_title">고객문의</span> <span class="more"><a href="#" >더보기 +</a></span>
-                    </dt>
-                    <dd>
-                      <!-- 게시판 시작 --------------------------------------------------------->
-                      <link rel="StyleSheet" href="./css/board_7.css" type="text/css">      
-      
-                      <table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" background="https://bdmp-003.cafe24.com/bizdemo154562/" class="board_output">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <table border="0" cellspacing="0" cellpadding="0" width="100%" id="board_output">
-                                <tbody>
-                                  <tr class="board_output_7_tr">
-                                    <td width="1%"><img alt="" src="./output_ol(1).gif" border="0" align="absmiddle"></td>
-                                    <td width="71%" style="word-break:break-all;overflow:hidden;" class="bd_out1"><a href="#" >겨울에도
-                                        바베큐시설이 이용.. </a> <img alt="" src="./icon_sct.gif" border="0" align="absmiddle"></td>
-                                    <td align="center" style="word-break:break-all;overflow:hidden;">2014-11-25</td>
-                                  </tr>
-                                  <tr class="board_output_7_tr">
-                                    <td width="1%"><img alt="" src="./output_ol(1).gif" border="0" align="absmiddle"></td>
-                                    <td width="71%" style="word-break:break-all;overflow:hidden;" class="bd_out1"><a href="#">픽업서비스
-                                        가능하나요? </a> <img alt="" src="./icon_sct.gif" border="0" align="absmiddle"></td>
-                                    <td align="center" style="word-break:break-all;overflow:hidden;">2014-11-25</td>
-                                  </tr>
-                                  <tr class="board_output_7_tr">
-                                    <td width="1%"><img alt="" src="./output_ol(1).gif" border="0" align="absmiddle"></td>
-                                    <td width="71%" style="word-break:break-all;overflow:hidden;" class="bd_out1"><a href="#" >펜션
-                                        근처에 먹을거리를 살.. </a> <img alt="" src="./icon_sct.gif" border="0" align="absmiddle"></td>
-                                    <td align="center" style="word-break:break-all;overflow:hidden;">2014-11-25</td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </td>
-                          </tr>
-                          <!--more-->
-                        </tbody>
-                      </table>
-                      <!-- 게시판 끝---------------------------------------------------------------------------------------->
-                    </dd>
-                  </dl>
-                </div>
-                <!-- 고객문의 영역끝----->
-              </div>
-            </div>
-          </section>
-          <!-- 펜션갤러리 시작----->
-          <div id="main_pension_gallery">
-            <dl>
-              <dt><span class="board_title">시설보기</span> <span class="more"><a href="#" >더보기 +</a></span></dt>
-              <dd>
-                <!-- 게시판 시작 --------------------------------------------------------->
-                <link rel="StyleSheet" href="./css/board_2.css" type="text/css">
-      
-                <table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff" background="#" class="board_output">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <table border="0" cellspacing="0" cellpadding="0" width="100%" id="pension_board_output" class="gallery_tab">
-                          <tbody>
-                            <tr valign="top">
-                              <td style="word-break:break-all;overflow:hidden;">
-                                <table border="0" cellspacing="0" cellpadding="2" width="98%">
-                                  <tbody>
-                                    <tr>
-                                      <td class="board_output_gallery_img"><a href="#" ><img alt="" src="./1416898104_74.jpg" border="0" width="350" height="320" class="board_output_imgs"></a><br></td>
-                                    </tr>
-                                    <tr>
-                                      <td style="word-break:break-all;overflow:hidden;"><span class="board_output_gallery_subject">샘플사진 </span><br></td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                              <td style="word-break:break-all;overflow:hidden;">
-                                <table border="0" cellspacing="0" cellpadding="2" width="98%">
-                                  <tbody>
-                                    <tr>
-                                      <td class="board_output_gallery_img"><a href="#" ><img alt="" src="./1416898053_29.jpg" border="0" width="350" height="320" class="board_output_imgs"></a><br></td>
-                                    </tr>
-                                    <tr>
-                                      <td style="word-break:break-all;overflow:hidden;"><span class="board_output_gallery_subject">샘플사진 </span><br></td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                              <td style="word-break:break-all;overflow:hidden;">
-                                <table border="0" cellspacing="0" cellpadding="2" width="98%">
-                                  <tbody>
-                                    <tr>
-                                      <td class="board_output_gallery_img"><a href="#" ><img alt="" src="./1416897977_41.jpg" border="0" width="350" height="320" class="board_output_imgs"></a><br></td>
-                                    </tr>
-                                    <tr>
-                                      <td style="word-break:break-all;overflow:hidden;"><span class="board_output_gallery_subject">샘플사진 </span><br></td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr valign="top">
-                              <td style="word-break:break-all;overflow:hidden;">
-                                <table border="0" cellspacing="0" cellpadding="2" width="98%">
-                                  <tbody>
-                                    <tr>
-                                      <td class="board_output_gallery_img"><a href="#" ><img alt="" src="./1416897961_85.jpg" border="0" width="350" height="320" class="board_output_imgs"></a><br></td>
-                                    </tr>
-                                    <tr>
-                                      <td style="word-break:break-all;overflow:hidden;"><span class="board_output_gallery_subject">시설보기 .. </span><br></td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                              <td style="word-break:break-all;overflow:hidden;">
-                                <table border="0" cellspacing="0" cellpadding="2" width="98%">
-                                  <tbody>
-                                    <tr>
-                                      <td class="board_output_gallery_img"><a href="#" ><img alt="" src="./1416897927_75.jpg" border="0" width="350" height="320" class="board_output_imgs"></a><br></td>
-                                    </tr>
-                                    <tr>
-                                      <td style="word-break:break-all;overflow:hidden;"><span class="board_output_gallery_subject">부대시설 .. </span><br></td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                              <td style="word-break:break-all;overflow:hidden;">
-                                <table border="0" cellspacing="0" cellpadding="2" width="98%">
-                                  <tbody>
-                                    <tr>
-                                      <td class="board_output_gallery_img"><a href="#" ><img alt="" src="./1416897910_30.jpg" border="0" width="350" height="320" class="board_output_imgs"></a><br></td>
-                                    </tr>
-                                    <tr>
-                                      <td style="word-break:break-all;overflow:hidden;"><span class="board_output_gallery_subject">샘플사진 </span><br></td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                    </tr>
-                    <!--more-->
-                  </tbody>
-                </table>
-                <!-- 게시판 끝---------------------------------------------------------------------------------------->
-              </dd>
-            </dl>
-          </div>
-          <!-- 펜션갤러리 끝----->
-          <!-- 포토갤러리 시작----->
-          <div id="main_photo_gallery">
-            <dl>
-              <dt><span class="board_title">포토갤러리</span> <span class="more"><a href="#" >더보기 +</a></span></dt>
-              <dd>
-                <!-- 게시판 시작 --------------------------------------------------------->
-                <link rel="StyleSheet" href=".css/board_9.css" type="text/css">
-      
-      
-                <table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" background="#" class="board_output">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <table border="0" cellspacing="0" cellpadding="0" width="100%" id="photo_board_output" class="gallery_tab">
-                          <tbody>
-                            <tr valign="top">
-                              <td style="word-break:break-all;overflow:hidden;">
-                                <table border="0" cellspacing="0" cellpadding="2" width="98%">
-                                  <tbody>
-                                    <tr>
-                                      <td class="board_output_gallery_img"><a href="#"><img alt="" src="./1416897977_41(1).jpg" border="0" width="350" height="320" class="board_output_imgs"></a><br></td>
-                                    </tr>
-                                    <tr>
-                                      <td style="word-break:break-all;overflow:hidden;"><span class="board_output_gallery_subject">샘플사진 </span><br></td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                              <td style="word-break:break-all;overflow:hidden;">
-                                <table border="0" cellspacing="0" cellpadding="2" width="98%">
-                                  <tbody>
-                                    <tr>
-                                      <td class="board_output_gallery_img"><a href="#" ><img alt="" src="./1416897961_85(1).jpg" border="0" width="350" height="320" class="board_output_imgs"></a><br></td>
-                                    </tr>
-                                    <tr>
-                                      <td style="word-break:break-all;overflow:hidden;"><span class="board_output_gallery_subject">샘플사진 </span><br></td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                              <td style="word-break:break-all;overflow:hidden;">
-                                <table border="0" cellspacing="0" cellpadding="2" width="98%">
-                                  <tbody>
-                                    <tr>
-                                      <td class="board_output_gallery_img"><a href="#" ><img alt="" src="./1416897927_75(1).jpg" border="0" width="350" height="320" class="board_output_imgs"></a><br></td>
-                                    </tr>
-                                    <tr>
-                                      <td style="word-break:break-all;overflow:hidden;"><span class="board_output_gallery_subject">샘플사진 </span><br></td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr valign="top">
-                              <td style="word-break:break-all;overflow:hidden;">
-                                <table border="0" cellspacing="0" cellpadding="2" width="98%">
-                                  <tbody>
-                                    <tr>
-                                      <td class="board_output_gallery_img"><a href="#" ><img alt="" src="./1416897910_30(1).jpg" border="0" width="350" height="320" class="board_output_imgs"></a><br></td>
-                                    </tr>
-                                    <tr>
-                                      <td style="word-break:break-all;overflow:hidden;"><span class="board_output_gallery_subject">샘플사진 </span><br></td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                              <td style="word-break:break-all;overflow:hidden;">
-                                <table border="0" cellspacing="0" cellpadding="2" width="98%">
-                                  <tbody>
-                                    <tr>
-                                      <td class="board_output_gallery_img"><a href="#" ><img alt="" src="./1416897830_46.jpg" border="0" width="350" height="320" class="board_output_imgs"></a><br></td>
-                                    </tr>
-                                    <tr>
-                                      <td style="word-break:break-all;overflow:hidden;"><span class="board_output_gallery_subject">샘플사진 </span><br></td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                              <td style="word-break:break-all;overflow:hidden;">
-                                <table border="0" cellspacing="0" cellpadding="2" width="98%">
-                                  <tbody>
-                                    <tr>
-                                      <td class="board_output_gallery_img"><a href="#" ><img alt="" src="./1416897812_40.jpg" border="0" width="350" height="320" class="board_output_imgs"></a><br></td>
-                                    </tr>
-                                    <tr>
-                                      <td style="word-break:break-all;overflow:hidden;"><span class="board_output_gallery_subject">샘플사진 </span><br></td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                    </tr>
-                    <!--more-->
-                  </tbody>
-                </table>
-                <!-- 게시판 끝---------------------------------------------------------------------------------------->
-              </dd>
-            </dl>
-          </div>
-          <!-- 포토갤러리 끝----->
-          <section id="main_contact_bg">
-            <div id="main_contact">
-              <div id="main_contact_left">
-                <h2>Contact Us</h2>
-                <span class="h_line"></span>
-                <p><i class="fa fa-map-marker"></i> 주소 : 경기도 00시 00동 000-00번지 000</p>
-                <div id="main_map">
-                  <iframe src="./embed.html" width="100%" height="530" frameborder="0" style="border:0" allowfullscreen=""></iframe>
-                </div>
-              </div>
-              <div id="main_contact_right">
-                <!-- 특별함 영역시작----->
-                <div id="special">
-                  <dl>
-                    <dt><span class="board_title">특별함</span> <span class="more"><a href="#" >더보기 +</a></span>
-                    </dt>
-                    <dd>
-                      <!-- 게시판 시작 -->
-                      <link rel="StyleSheet" href=".css/board_11.css" type="text/css">
-      
-      
-                      <table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" background="#" class="board_output">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <table border="0" cellspacing="0" cellpadding="0" width="100%" id="special_board_output">
-                                <tbody>
-                                  <tr class="board_output_11_tr">
-                                    <td width="1%"><img alt="" src="./output_ol(2).gif" border="0" align="absmiddle"></td>
-                                    <td><a href="#" ><img alt="" src="./20151227165633_1192539526.jpg" border="0" width="70" height="50" class="board_output_imgs"></a></td>
-                                    <td width="71%" style="word-break:break-all;overflow:hidden;" class="bd_out1">사계절 실내
-                                      바비큐장에서 편안하게 마음껏 드세요~ </td>
-                                  </tr>
-                                  <tr class="board_output_11_tr">
-                                    <td width="1%"><img alt="" src="./output_ol(2).gif" border="0" align="absmiddle"></td>
-                                    <td><a href="#" ><img alt="" src="./20151227165253_1179986590.jpg" border="0" width="70" height="50" class="board_output_imgs"></a></td>
-                                    <td width="71%" style="word-break:break-all;overflow:hidden;" class="bd_out1">펜션 카페테리아에서
-                                      분위기 있는 음악과 함께 커피 .. </td>
-                                  </tr>
-                                  <tr class="board_output_11_tr">
-                                    <td width="1%"><img alt="" src="./output_ol(2).gif" border="0" align="absmiddle"></td>
-                                    <td><a href="#" ><img alt="" src="./20151227165418_1377376626.jpg" border="0" width="70" height="50" class="board_output_imgs"></a></td>
-                                    <td width="71%" style="word-break:break-all;overflow:hidden;" class="bd_out1">텃밭에서 직접 기른
-                                      싱싱한 채소 및 찌개로 조식서비.. </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </td>
-                          </tr>
-                          <!--more-->
-                        </tbody>
-                      </table>
-                      <!-- 게시판 끝 -->
-                    </dd>
-                  </dl>
-                </div>
-                <!-- 특별함 영역끝----->
-                <!-- 인근여행지 시작----->
-                <div id="main_tour_gallery">
-                  <dl>
-                    <dt><span class="board_title">인근여행지</span> <span class="more"><a href="#" >더보기 +</a></span>
-                    </dt>
-                    <dd>
-                      <!-- 게시판 시작 -->
-                      <link rel="StyleSheet" href=".css/board_10.css" type="text/css">
-      
-      
-                      <table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" background="#" class="board_output">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <table border="0" cellspacing="0" cellpadding="0" width="100%" id="tour_board_output">
-                                <tbody>
-                                  <tr class="board_output_10_tr">
-                                    <td width="1%"><img alt="" src="./output_ol(3).gif" border="0" align="absmiddle"></td>
-                                    <td><a href="#" ><img alt="" src="./1416918603_30.jpg" border="0" width="70" height="50" class=""></a></td>
-                                    <td width="71%" style="word-break:break-all;overflow:hidden;" class="bd_out1">00산 자락에 위치한
-                                      천년고찰 00사를 오르다보면 정다.. </td>
-                                  </tr>
-                                  <tr class="board_output_10_tr">
-                                    <td width="1%"><img alt="" src="./output_ol(3).gif" border="0" align="absmiddle"></td>
-                                    <td><a href="#" ><img alt="" src="./1416918572_95.jpg" border="0" width="70" height="50" class="board_output_imgs"></a></td>
-                                    <td width="71%" style="word-break:break-all;overflow:hidden;" class="bd_out1">펜션 앞 00산
-                                      정상에는 이름모를 수많은 야생화가 끝.. </td>
-                                  </tr>
-                                  <tr class="board_output_10_tr">
-                                    <td width="1%"><img alt="" src="./output_ol(3).gif" border="0" align="absmiddle"></td>
-                                    <td><a href="#" ><img alt="" src="./1416918534_69.jpg" border="0" width="70" height="50" class="board_output_imgs"></a></td>
-                                    <td width="71%" style="word-break:break-all;overflow:hidden;" class="bd_out1">펜션 앞 울창한 숲길을
-                                      따라 오르면 만나게 되는 곳.... </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </td>
-                          </tr>
-                          <!--more-->
-                        </tbody>
-                      </table>
-                      <!-- 게시판 끝 -->
-                    </dd>
-                  </dl>
-                </div>
-                <!-- 인근여행지 끝----->
-              </div>
-            </div>
-          </section>
-          <!--하단영역시작----->
-          <footer id="footer">
-            <div id="bottom">
-              <ul>
-                <li><a href="#" >캠핑장소개</a></li>
-                <li><a href="#" >이용약관</a></li>
-                <li><a href="#" >개인정보보호정책</a></li>
-                <li class="end"><a href="#" >이메일수집거부</a></li>
-              </ul>
-            </div>
-            <div id="bottom2">
-              <div id="bottom_info">
-                <div id="foot_company">
-                  <h4>About Us</h4>
-                  <address>상호명 : 000캠핑장&nbsp;&nbsp; 주소 : 경기도 00군 000읍 000-00 &nbsp;&nbsp; 전화번호 : <span class="eng_num bold">070-0000-0000</span><br>
-                    대표 : 000 &nbsp;&nbsp; 사업자번호 : <span class="eng_num bold">000-0000-0000</span> &nbsp;&nbsp; 통신판매업번호 : <span class="eng_num bold">000-0000-0000</span><br>
-                    개인정보책임자 : 000 &nbsp;&nbsp; 이메일 : <span class="eng_num bold">000000@0000.000</span></address>
-                </div>
-                <div id="foot_customer">
-                  <h4>Customer</h4>
-                  <address>전화번호 : <span class="eng_num bold">070-0000-0000</span> &nbsp;&nbsp; 휴대폰번호 : <span class="eng_num bold">010-0000-0000</span><br>
-                    계좌번호 : <span class="bold">농협</span> <span class="eng_num bold">000-0000-0000 000</span> <span class="bold">예금주 : 000</span></address>
-                </div>
-                <ul id="sns_bottom">
-                  <h4>SNS link</h4>
-                  <li><a href="#"  title="페이스북"><i class=""></i></a></li>
-                  <li><a href="#"  title="유튜브"><i class="x"></i></a></li>
-                  <li><a href="#"  title="인스타그램"><i class=""></i></a></li>
+    div#main_container{width:1200px; margin:0px auto;overflow: hidden;}
+    .mainmenu{
+        width: 16.35%;
+        float: left;
+    }
+    #main_container:hover .submenu{
+        display:block;
+    }
+    .submenu{display:none;}
+
+</style>
+
+<body>
+    <!-- wrap시작 -->
+    <div id="wrap">
+        
+    <!-- top영역시작(타이틀) -->
+     <div id="top_container">
+        <header id="title_bar">
+            <div id="gnb">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Join</a></li>
+                    <li><a href="#">Mypage</a></li>
                 </ul>
-              </div>
             </div>
-            <div id="copy">
+            <div id="logo">
+                <img src="img/logo.jpg" alt="">
             </div>
-          </footer>
-        </div>
-        <!--wrap끝----->
-      
-      
-      <!-- Code injected by live-server -->
-      <script>
-      </script>
-      
-      
-      </body>
-    
+        </header>
+
+     </div>
+    <!-- top영역끝 -->
+    <!-- --본문영역시작(메인메뉴+슬라이더)----- -->
+     <div id="main_container">
+        <ul class="mainmenu">
+            <li>
+                <a href="">캠핑장소개</a>
+                <span class="menu_line"></span>
+                <ul class="submenu">
+                    <li><a href="">인사말</a></li>
+                    <li><a href="">시설보기</a></li>
+                    <li><a href="">오시는길</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="mainmenu">
+            <li>
+                <a href="">사이트보기</a>
+                <span class="menu_line"></span>
+                <ul class="submenu">
+                    <li><a href="">시설물보기</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="mainmenu">
+            <li>
+                <a href="">예약안내</a>
+                <span class="menu_line"></span>
+                <ul class="submenu">
+                    <li><a href="">예약안내</a></li>
+                    <li><a href="">실시간에약</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="mainmenu">
+            <li>
+                <a href="">특별함</a>
+                <span class="menu_line"></span>
+                <ul class="submenu">
+                    <li><a href="">특별함</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="mainmenu">
+            <li>
+                <a href="">인기여행지</a>
+                <span class="menu_line"></span>
+                <ul class="submenu">
+                    <li><a href="">인근여행지</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="mainmenu">
+            <li>
+                <a href="">커뮤니티</a>
+                <span class="menu_line"></span>
+                <ul class="submenu">
+                    <li><a href="">공지사항</a></li>
+                    <li><a href="">고객문의</a></li>
+                    <li><a href="">이용후기</a></li>
+                    <li><a href="">포토갤러리</a></li>
+                </ul>
+            </li>
+        </ul>
+
+
+     </div>
+    <!-- --본문영역끝----- -->
+    <!-- 본문서브시작 -->
+     <div id="sub_container"></div>
+    <!-- 본문서부끝 -->
+    <!-- 하단시작 -->
+     <div id="buttom_container"></div>
+    <!-- 하단끝 -->
+    </div>
+    <!-- --wrap끝----- -->
+
+    <script>
+    </script>
+
+
 </body>
+
 </html>
