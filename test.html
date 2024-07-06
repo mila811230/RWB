@@ -24,22 +24,132 @@
     div#logo{margin:0 auto; width:200px;}
     div#logo>img{ width:100%;}
 
-    div#main_container{
-        width:1200px; margin:0px auto;overflow: hidden;
-        z-index: 10;
-    }
-    .mainmenu{
-        width: 16.35%;
-        float: left;
-    }
-    #main_container:hover .submenu{
-        display:block;
-    }
-    .submenu{display:none;}
-    #sub_container{
-        position: relative;
-        z-index: 1;
-    }
+    .menu-container {
+            position: relative;
+            background-color: #333;
+        }
+
+        .mainmenu {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .mainmenu > li {
+            position: relative;
+        }
+
+        .mainmenu > li > a {
+            display: block;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+
+        .mainmenu > li:hover > a {
+            background-color: #444;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 200px;
+            z-index: 10;
+        }
+
+        .submenu > li > a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .submenu > li > a:hover {
+            background-color: #555;
+        }
+
+        .mainmenu > li:hover .submenu {
+            display: block;
+        }
+
+        /* 슬라이더스타일 */
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+
+        .sub-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .slider_panel {
+            display: flex;
+            transition: left 0.5s ease;
+            position: relative;
+            left: 0;
+        }
+
+        .slider_image {
+            min-width: 100%;
+        }
+
+        .slider_image img {
+            width: 100%;
+            display: block;
+        }
+
+        .control_panel {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+        }
+
+        .control_btn {
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .control_btn.active {
+            background-color: red;
+        }
+
+        .direct_btn {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .direct_btn img {
+            cursor: pointer;
+        }
+
 </style>
 
 <body>
@@ -65,85 +175,66 @@
      </div>
     <!-- top영역끝 -->
     <!-- --본문영역시작(메인메뉴+슬라이더)----- -->
-     <div id="main_container">
+ 
+    <div class="menu-container">
         <ul class="mainmenu">
             <li>
-                <a href="">캠핑장소개</a>
-                <span class="menu_line"></span>
+                <a href="#">캠핑장소개</a>
                 <ul class="submenu">
-                    <li><a href="">인사말</a></li>
-                    <li><a href="">시설보기</a></li>
-                    <li><a href="">오시는길</a></li>
+                    <li><a href="#">인사말</a></li>
+                    <li><a href="#">시설보기</a></li>
+                    <li><a href="#">오시는길</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">사이트보기</a>
+                <ul class="submenu">
+                    <li><a href="#">시설물보기</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">예약안내</a>
+                <ul class="submenu">
+                    <li><a href="#">예약안내</a></li>
+                    <li><a href="#">실시간예약</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">특별함</a>
+                <ul class="submenu">
+                    <li><a href="#">특별함</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">인기여행지</a>
+                <ul class="submenu">
+                    <li><a href="#">인근여행지</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">커뮤니티</a>
+                <ul class="submenu">
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">고객문의</a></li>
+                    <li><a href="#">이용후기</a></li>
+                    <li><a href="#">포토갤러리</a></li>
                 </ul>
             </li>
         </ul>
-        <ul class="mainmenu">
-            <li>
-                <a href="">사이트보기</a>
-                <span class="menu_line"></span>
-                <ul class="submenu">
-                    <li><a href="">시설물보기</a></li>
-                </ul>
-            </li>
-        </ul>
-        <ul class="mainmenu">
-            <li>
-                <a href="">예약안내</a>
-                <span class="menu_line"></span>
-                <ul class="submenu">
-                    <li><a href="">예약안내</a></li>
-                    <li><a href="">실시간에약</a></li>
-                </ul>
-            </li>
-        </ul>
-        <ul class="mainmenu">
-            <li>
-                <a href="">특별함</a>
-                <span class="menu_line"></span>
-                <ul class="submenu">
-                    <li><a href="">특별함</a></li>
-                </ul>
-            </li>
-        </ul>
-        <ul class="mainmenu">
-            <li>
-                <a href="">인기여행지</a>
-                <span class="menu_line"></span>
-                <ul class="submenu">
-                    <li><a href="">인근여행지</a></li>
-                </ul>
-            </li>
-        </ul>
-        <ul class="mainmenu">
-            <li>
-                <a href="">커뮤니티</a>
-                <span class="menu_line"></span>
-                <ul class="submenu">
-                    <li><a href="">공지사항</a></li>
-                    <li><a href="">고객문의</a></li>
-                    <li><a href="">이용후기</a></li>
-                    <li><a href="">포토갤러리</a></li>
-                </ul>
-            </li>
-        </ul>
+    </div>
 
-
-     </div>
      <!-- 슬라이더시작 -->
 
-     <div class="slider-container">
-        <img src="img/1.jpg" alt="슬라이더 이미지">
-    </div>
-     <section id="sub_container">
 
+     <div class="sub-container">
         <div id="sub_photo_bg">
-            <ul class="slider_panel" style="left: -293.815%;">
+            <ul class="slider_panel">
                 <li class="slider_image"><img src="img/1.jpg" alt=""></li>
-                <!-- <li class="slider_image"><img src="img/2.jpg" alt=""></li>
+                <li class="slider_image"><img src="img/2.jpg" alt=""></li>
                 <li class="slider_image"><img src="img/3.jpg" alt=""></li>
                 <li class="slider_image"><img src="img/1.jpg" alt=""></li>
                 <li class="slider_image"><img src="img/2.jpg" alt=""></li>
-                <li class="slider_image"><img src="img/3.jpg" alt=""></li> -->
+                <li class="slider_image"><img src="img/3.jpg" alt=""></li>
             </ul>
             <div class="control_panel">
                 <div class="control_btn active" data-index="0"></div>
@@ -152,26 +243,196 @@
             </div>
             <div class="direct_btn">
                 <div class="left_btn">
-                    <img src="/bizdemo154562/img/youlbit/left_btn.png">
+                    <img src="img/left_btn.png" alt="left">
                 </div>
                 <div class="right_btn">
-                    <img src="/bizdemo154562/img/youlbit/right_btn.png">
+                    <img src="img/right_btn.png" alt="right">
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    
      <!-- 슬라이더 끝 -->
     <!-- --본문영역끝----- -->
     <!-- 본문서브시작 -->
-     <div id="sub_container"></div>
+     <style>        
+        /* 본문스타일 */
+        .content-container{            
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        #left-area{
+            float: left;
+            width: 20%;
+        }
+        #content-area{
+            float: right;
+            width:75%;
+
+        }
+
+        .left_menu_box{
+            text-align: center;
+        }
+        .left_menu_title{
+            font-size:32px;
+            font-weight: 800;
+            text-align: center;
+            padding-left: 50px;
+        }
+        .left_menu{
+            font-size:20px;
+            color:gray;
+            text-align: center;
+        }
+        .left_banner_title{
+            display: block; /* 블록 요소로 만듦 */
+            text-align: center; /* 가운데 정렬 */
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .left_banner{
+            font-size:20px;
+            color:gray;
+            text-align: center;
+        }
+        .content_title{
+            font-size:40px;
+            color:blue;
+            text-align: center;
+
+        }
+        .bottom_line{
+            border-bottom: 5px solid #c1c1c1;
+        }
+     </style>
+     <div class="content-container">
+        <div id="left-area">
+            <div id="left_menu_box">
+                <span class="left_menu_title">특별함</span>
+                <ul>
+                    <li class="left_menu"><a href="">특별함</a></li>                    
+                </ul>
+            </div>
+            <div id="left_banner_box">
+                <span class="left_banner_title">Customer Center</span>
+                <ul>
+                    <li class="left_banner">070-123-4567</li>  
+                    <li class="left_banner">농협 000-000-0000<br>홍길동</li>                    
+                </ul>
+            </div>            
+        </div>
+
+        <style>
+            .album {
+                border-top: 1px solid green;
+            }
+            .album td{
+                padding:5px;
+                border-bottom: 1px solid green;
+            }
+            
+        </style>
+        <div id="content-area">
+            <div class="content_title">특별함</div>
+            <div class="bottom_line"></div>
+            <div id="article" class="content">
+                <h3>사계절 낭만이 있는 곳에서 행복한 추억을 많이 만들어 가세요</h3>
+                <table class="album" border="0" cellspacing="0" cellpadding="0" width="100%">
+                    <tr>
+                        <td>
+                            <a href="#"><img alt="" src="img/20151227165633_1192539526.jpg" width="200" height="120" border="0"></a>
+                        </td>
+                        <td>
+                            <a href="#">
+                            비가 오나 눈이 오나 걱정없는 실내 바비큐장에서 사계절 편안하게 드세요~본 내용은 샘플로 작성되었으며 추후에 관리자가 펜션에 맞게 직접 내용을 등록하실 수 있습니다.  감사합니다.
+                            </a>
+                            <div align="right">[<font style="color:#878787;font-size:12px;">작성일자 : 2015-12-27</font>, <font style="color:#878787;font-size:12px;">조회수 : 51</font>]</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#"><img alt="" src="img/20151227165633_1192539526.jpg" width="200" height="120" border="0"></a>
+                        </td>
+                        <td>
+                            <a href="#">
+                            비가 오나 눈이 오나 걱정없는 실내 바비큐장에서 사계절 편안하게 드세요~본 내용은 샘플로 작성되었으며 추후에 관리자가 펜션에 맞게 직접 내용을 등록하실 수 있습니다.  감사합니다.
+                            </a>
+                            <div align="right">[<font style="color:#878787;font-size:12px;">작성일자 : 2015-12-27</font>, <font style="color:#878787;font-size:12px;">조회수 : 51</font>]</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#"><img alt="" src="img/20151227165633_1192539526.jpg" width="200" height="120" border="0"></a>
+                        </td>
+                        <td>
+                            <a href="#">
+                            비가 오나 눈이 오나 걱정없는 실내 바비큐장에서 사계절 편안하게 드세요~본 내용은 샘플로 작성되었으며 추후에 관리자가 펜션에 맞게 직접 내용을 등록하실 수 있습니다.  감사합니다.
+                            </a>
+                            <div align="right">[<font style="color:#878787;font-size:12px;">작성일자 : 2015-12-27</font>, <font style="color:#878787;font-size:12px;">조회수 : 51</font>]</div>
+                               
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        
+     </div>
     <!-- 본문서부끝 -->
     <!-- 하단시작 -->
-     <div id="buttom_container"></div>
+     <div class="buttom-container"></div>
     <!-- 하단끝 -->
     </div>
     <!-- --wrap끝----- -->
 
+
     <script>
+        // JavaScript로 슬라이더 기능 구현
+        document.addEventListener("DOMContentLoaded", function () {
+            const sliderPanel = document.querySelector('.slider_panel');
+            const controlBtns = document.querySelectorAll('.control_btn');
+            const leftBtn = document.querySelector('.left_btn img');
+            const rightBtn = document.querySelector('.right_btn img');
+            let currentIndex = 0;
+
+            function updateSlider(index) {
+                sliderPanel.style.left = `-${index * 100}%`;
+                controlBtns.forEach(btn => btn.classList.remove('active'));
+                controlBtns[index].classList.add('active');
+            }
+
+            controlBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    currentIndex = parseInt(this.dataset.index);
+                    updateSlider(currentIndex);
+                });
+            });
+
+            leftBtn.addEventListener('click', function () {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSlider(currentIndex);
+                }
+            });
+
+            rightBtn.addEventListener('click', function () {
+                if (currentIndex < controlBtns.length - 1) {
+                    currentIndex++;
+                    updateSlider(currentIndex);
+                }
+            });
+
+            setInterval(function () {
+                currentIndex = (currentIndex + 1) % controlBtns.length;
+                updateSlider(currentIndex);
+            }, 3000);
+        });
     </script>
 
 

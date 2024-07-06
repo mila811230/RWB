@@ -81,6 +81,8 @@
             display: block;
         }
 
+        /* 슬라이더스타일 */
+
         .slider-container {
             position: relative;
             width: 100%;
@@ -147,6 +149,7 @@
         .direct_btn img {
             cursor: pointer;
         }
+
 </style>
 
 <body>
@@ -252,10 +255,138 @@
      <!-- 슬라이더 끝 -->
     <!-- --본문영역끝----- -->
     <!-- 본문서브시작 -->
-     <div id="sub_container"></div>
+     <style>        
+        /* 본문스타일 */
+        .content-container{            
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        #left-area{
+            float: left;
+            width: 20%;
+        }
+        #content-area{
+            float: right;
+            width:75%;
+
+        }
+
+        .left_menu_box{
+            text-align: center;
+        }
+        .left_menu_title{
+            font-size:32px;
+            font-weight: 800;
+            text-align: center;
+            padding-left: 50px;
+        }
+        .left_menu{
+            font-size:20px;
+            color:gray;
+            text-align: center;
+        }
+        .left_banner_title{
+            display: block; /* 블록 요소로 만듦 */
+            text-align: center; /* 가운데 정렬 */
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .left_banner{
+            font-size:20px;
+            color:gray;
+            text-align: center;
+        }
+        .content_title{
+            font-size:40px;
+            color:blue;
+            text-align: center;
+
+        }
+        .bottom_line{
+            border-bottom: 5px solid #c1c1c1;
+        }
+     </style>
+     <div class="content-container">
+        <div id="left-area">
+            <div id="left_menu_box">
+                <span class="left_menu_title">특별함</span>
+                <ul>
+                    <li class="left_menu"><a href="">특별함</a></li>                    
+                </ul>
+            </div>
+            <div id="left_banner_box">
+                <span class="left_banner_title">Customer Center</span>
+                <ul>
+                    <li class="left_banner">070-123-4567</li>  
+                    <li class="left_banner">농협 000-000-0000<br>홍길동</li>                    
+                </ul>
+            </div>            
+        </div>
+
+        <style>
+            .album {
+                border-top: 1px solid green;
+            }
+            .album td{
+                padding:5px;
+                border-bottom: 1px solid green;
+            }
+            
+        </style>
+        <div id="content-area">
+            <div class="content_title">특별함</div>
+            <div class="bottom_line"></div>
+            <div id="article" class="content">
+                <h3>사계절 낭만이 있는 곳에서 행복한 추억을 많이 만들어 가세요</h3>
+                <table class="album" border="0" cellspacing="0" cellpadding="0" width="100%">
+                    <tr>
+                        <td>
+                            <a href="#"><img alt="" src="img/20151227165633_1192539526.jpg" width="200" height="120" border="0"></a>
+                        </td>
+                        <td>
+                            <a href="#">
+                            비가 오나 눈이 오나 걱정없는 실내 바비큐장에서 사계절 편안하게 드세요~본 내용은 샘플로 작성되었으며 추후에 관리자가 펜션에 맞게 직접 내용을 등록하실 수 있습니다.  감사합니다.
+                            </a>
+                            <div align="right">[<font style="color:#878787;font-size:12px;">작성일자 : 2015-12-27</font>, <font style="color:#878787;font-size:12px;">조회수 : 51</font>]</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#"><img alt="" src="img/20151227165633_1192539526.jpg" width="200" height="120" border="0"></a>
+                        </td>
+                        <td>
+                            <a href="#">
+                            비가 오나 눈이 오나 걱정없는 실내 바비큐장에서 사계절 편안하게 드세요~본 내용은 샘플로 작성되었으며 추후에 관리자가 펜션에 맞게 직접 내용을 등록하실 수 있습니다.  감사합니다.
+                            </a>
+                            <div align="right">[<font style="color:#878787;font-size:12px;">작성일자 : 2015-12-27</font>, <font style="color:#878787;font-size:12px;">조회수 : 51</font>]</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#"><img alt="" src="img/20151227165633_1192539526.jpg" width="200" height="120" border="0"></a>
+                        </td>
+                        <td>
+                            <a href="#">
+                            비가 오나 눈이 오나 걱정없는 실내 바비큐장에서 사계절 편안하게 드세요~본 내용은 샘플로 작성되었으며 추후에 관리자가 펜션에 맞게 직접 내용을 등록하실 수 있습니다.  감사합니다.
+                            </a>
+                            <div align="right">[<font style="color:#878787;font-size:12px;">작성일자 : 2015-12-27</font>, <font style="color:#878787;font-size:12px;">조회수 : 51</font>]</div>
+                               
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        
+     </div>
     <!-- 본문서부끝 -->
     <!-- 하단시작 -->
-     <div id="buttom_container"></div>
+     <div class="buttom-container"></div>
     <!-- 하단끝 -->
     </div>
     <!-- --wrap끝----- -->
