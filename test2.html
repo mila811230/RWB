@@ -5,26 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<style>
-    a{text-decoration: none;text-align: center;}
-    ul,li{list-style:none; 
-        padding:0px; margin:0;   border:1px solid green;}
-    div {
-        border: 1px solid blue;
-    }
-    header#title_bar{
-        background-color: yellow;
-        position: relative;
-        /* height: 75px; */
-    }
-    div#gnb{position: absolute; right:20px;}
-    #gnb>ul{ overflow: hidden;}
-    #gnb>ul>li{float: left; margin:0px 10px;}
-    div#logo{margin:0 auto; width:200px;}
-    div#logo>img{ width:100%;}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    .menu-container {
+        header {
+            background-color: yellow;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .menu-container {
             position: relative;
             background-color: #333;
         }
@@ -93,32 +87,14 @@
             width: 100%;
             display: block;
         }
-</style>
+    </style>
+</head>
 
 <body>
-    <!-- wrap시작 -->
-    <div id="wrap">
-        
-    <!-- top영역시작(타이틀) -->
-     <div id="top_container">
-        <header id="title_bar">
-            <div id="gnb">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Join</a></li>
-                    <li><a href="#">Mypage</a></li>
-                </ul>
-            </div>
-            <div id="logo">
-                <img src="img/logo.jpg" alt="">
-            </div>
-        </header>
+    <header>
+        <h1>캠핑장 홈페이지</h1>
+    </header>
 
-     </div>
-    <!-- top영역끝 -->
-    <!-- --본문영역시작(메인메뉴+슬라이더)----- -->
- 
     <div class="menu-container">
         <ul class="mainmenu">
             <li>
@@ -166,26 +142,9 @@
         </ul>
     </div>
 
-     <!-- 슬라이더시작 -->
-
-     <div class="slider-container">
-        <img src="img/1.jpg" alt="슬라이더 이미지">
+    <div class="slider-container">
+        <img src="https://via.placeholder.com/1200x400" alt="슬라이더 이미지">
     </div>
-    
-     <!-- 슬라이더 끝 -->
-    <!-- --본문영역끝----- -->
-    <!-- 본문서브시작 -->
-     <div id="sub_container"></div>
-    <!-- 본문서부끝 -->
-    <!-- 하단시작 -->
-     <div id="buttom_container"></div>
-    <!-- 하단끝 -->
-    </div>
-    <!-- --wrap끝----- -->
-
-    <script>
-    </script>
-
 
 </body>
 
