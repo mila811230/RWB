@@ -7,19 +7,47 @@
     <title>Document</title>
 </head>
 <style>
+    a{text-decoration: none;}
+    ul,li{list-style:none;}
     div {
         border: 1px solid blue;
     }
+    header#title_bar{
+        background-color: yellow;
+        position: relative;
+        /* height: 75px; */
+    }
+    div#gnb{position: absolute; right:20px;}
+    #gnb>ul{ overflow: hidden;}
+    #gnb>ul>li{float: left; margin:0px 10px;}
+    div#logo{margin:0 auto; width:200px;}
+    div#logo>img{ width:100%;}
 </style>
 
 <body>
     <!-- wrap시작 -->
     <div id="wrap">
         
-    <!-- top영역시작 -->
-     <div id="top_container"></div>
+    <!-- top영역시작(타이틀) -->
+     <div id="top_container">
+        <header id="title_bar">
+            <div id="gnb">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Join</a></li>
+                    <li><a href="#">Mypage</a></li>
+                </ul>
+            </div>
+            <div id="logo">
+                <img src="img/logo.jpg" alt="">
+
+            </div>
+        </header>
+
+     </div>
     <!-- top영역끝 -->
-    <!-- --본문영역시작----- -->
+    <!-- --본문영역시작(메인메뉴+슬라이더)----- -->
      <div id="main_container"></div>
     <!-- --본문영역끝----- -->
     <!-- 본문서브시작 -->
