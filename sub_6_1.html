@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    a {
+        text-decoration: none;
+        text-align: center;
+    }
+
+    ul,
+    li {
+        list-style: none;
+        padding: 0px;
+        margin: 0;
+        border: 1px solid green;
+    }
+
+    div {
+        border: 1px solid blue;
+    }
+</style>
+
+<body>
+    <!-- wrap시작 -->
+    <div id="wrap">
+        <!-- 상단영역시작 -->
+        <div id="topArea"></div>
+
+        <script>
+            function includeHTML(ctrl, page, callback) {
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', page, true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        document.getElementById(ctrl).innerHTML = xhr.responseText;
+                        if (callback) {
+                            callback();
+                        }
+                    }
+                };
+                xhr.send();
+            }
+
+            function initSlider() {
+                const sliderPanel = document.querySelector('.slider_panel');
+                const controlBtns = document.querySelectorAll('.control_btn');
+                const leftBtn = document.querySelector('.left_btn img');
+                const rightBtn = document.querySelector('.right_btn img');
+                let currentIndex = 0;
+
+                function updateSlider(index) {
+                    sliderPanel.style.left = `-${index * 100}%`;
+                    controlBtns.forEach(btn => btn.classList.remove('active'));
+                    controlBtns[index].classList.add('active');
+                }
+
+                controlBtns.forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        currentIndex = parseInt(this.dataset.index);
+                        updateSlider(currentIndex);
+                    });
+                });
+
+                leftBtn.addEventListener('click', function () {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        updateSlider(currentIndex);
+                    }
+                });
+
+                rightBtn.addEventListener('click', function () {
+                    if (currentIndex < controlBtns.length - 1) {
+                        currentIndex++;
+                        updateSlider(currentIndex);
+                    }
+                });
+
+                setInterval(function () {
+                    currentIndex = (currentIndex + 1) % controlBtns.length;
+                    updateSlider(currentIndex);
+                }, 3000);
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                includeHTML('topArea', 'topArea.html', initSlider);
+            });
+        </script>
+        <!-- 상단영역끝 -->
+        <!-- 본문시작 -->
+        <style>
+            /* 본문스타일 */
+            .content-container {
+                position: relative;
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                overflow: hidden;
+            }
+        </style>
+        <div class="content-container">
+            <!-- 좌측메뉴시작 -->
+            <div id="leftmenuArea"></div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    includeHTML('leftmenuArea', 'sub_6_menu.html', null);
+                });
+            </script>
+            <!-- 좌측매뉴끝 -->
+            <!-- 본문내용시작 -->
+            <style>
+                #content-area {
+                    float: right;
+                    width: 75%;
+
+                }
+
+                .content_title {
+                    font-size: 40px;
+                    color: blue;
+                    text-align: center;
+
+                }
+
+                .bottom_line {
+                    border-bottom: 5px solid #c1c1c1;
+                }
+
+                .album {
+                    border-top: 1px solid green;
+                }
+
+                .album td {
+                    padding: 5px;
+                    border-bottom: 1px solid green;
+                }
+            </style>
+            <div id="content-area">
+                <div class="content_title">공지사항</div>
+                <div class="bottom_line"></div>
+                <div id="article" class="content">
+                    <h3>사계절 낭만이 있는 곳에서 행복한 추억을 많이 만들어 가세요</h3>
+                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse" width="100%" class="board">
+                        <!-- 타이틀 -->
+                        <tbody>
+                            <tr align="center" height="30" bgcolor="#F7F7F7">
+                                <!-- # 항목 -->
+                                <!-- // 관리자일 경우 삭제버튼 활성화 -->
+                                <td class="att_title">
+                                    <!-- // 항목 디자인 방식이 이미지이면서 이미지값이 있을 때 -->
+                                    <font>번호</font>
+                                </td>
+                                <td class="att_title">
+                                    <!-- // 항목 디자인 방식이 이미지이면서 이미지값이 있을 때 -->
+                                    <font>제목</font>
+                                </td>
+                                <td class="att_title">
+                                    <!-- // 항목 디자인 방식이 이미지이면서 이미지값이 있을 때 -->
+                                    <font>작성일자</font>
+                                </td>
+                                <td class="att_title">
+                                    <!-- // 항목 디자인 방식이 이미지이면서 이미지값이 있을 때 -->
+                                    <font>조회수</font>
+                                </td>
+
+                            </tr>
+                            <!-- //타이틀 -->
+                            <!-- 내용 -->
+
+
+                            <tr align="center" height="28"  onclick="location.href='#'; return false;" style="cursor:pointer;">
+                                <td class="bbsno">4</td>
+                                <td class="bbsnewf5" align="left">
+                                    <a href=""></a><a  href="#">웹표준으로 제작되어 스마트폰에서도 이상없이 작동합니다. </a>
+                                </td>
+                                <td class="bbsetc_dateof_write">2014-11-25</td>
+                                <td class="bbsetc_view_count">59</td>
+                            </tr>
+                            <tr align="center" height="28"  onclick="location.href='#'; return false;" style="cursor:pointer;">
+                                <td class="bbsno"> 3</td>
+                                <td class="bbsnewf5" align="left">
+                                    <a href=""></a>
+                                    <a href="#">타업종에서도 이용이 가능하며, 그 경우 사전에 문의주시면 감사하겠습니다.. </a>
+                                </td>
+                                <td class="bbsetc_dateof_write">2014-11-25</td>
+                                <td class="bbsetc_view_count">17</td>
+                            </tr>
+                            <tr align="center" height="28"  onclick="location.href='#'; return false;"  style="cursor:pointer;">
+                                <td class="bbsno">  2 </td>
+                                <td class="bbsnewf5" align="left">
+                                    <a href=""></a>
+                                    <a href="#">펜션,  게스트하우스, 민박등의 업종에 적합한 디자인입니다. </a>
+                                </td>
+                                <td class="bbsetc_dateof_write">2014-11-25</td>
+                                <td class="bbsetc_view_count">19</td>
+                            </tr>
+                            <tr align="center" height="28" onclick="location.href='#'; return false;" style="cursor:pointer;">
+                                <td class="bbsno"> 1 </td>
+                                <td class="bbsnewf5" align="left">
+                                    <a href=""></a>
+                                    <a href="#">test</a>
+                                </td>
+                                <td class="bbsetc_dateof_write">2014-11-25</td>
+                                <td class="bbsetc_view_count">4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+            <!-- 본문내용끝       -->
+        </div>
+        <!-- 본문끝 -->
+        <!-- 하단시작 -->
+        <div id="bottomArea"></div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                includeHTML('bottomArea', 'bottomArea.html', null);
+            });
+        </script>
+        <!-- 하단끝 -->
+    </div>
+    <!-- --wrap끝----- -->
+
+
+
+
+</body>
+
+</html>

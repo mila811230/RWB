@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    a{text-decoration: none;text-align: center;}
+    ul,li{list-style:none; 
+        padding:0px; margin:0;   border:1px solid green;}
+    div {
+        border: 1px solid blue;
+    }
+
+</style>
+
+<body>
+    <!-- wrap시작 -->
+    <div id="wrap">
+    <!-- 상단영역시작 -->
+     <div id="topArea"></div>
+
+     <script>
+        function includeHTML(ctrl, page, callback) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', page, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById(ctrl).innerHTML = xhr.responseText;
+                    if (callback) {
+                        callback();
+                    }
+                }
+            };
+            xhr.send();
+        }
+    
+        function initSlider() {
+            const sliderPanel = document.querySelector('.slider_panel');
+            const controlBtns = document.querySelectorAll('.control_btn');
+            const leftBtn = document.querySelector('.left_btn img');
+            const rightBtn = document.querySelector('.right_btn img');
+            let currentIndex = 0;
+    
+            function updateSlider(index) {
+                sliderPanel.style.left = `-${index * 100}%`;
+                controlBtns.forEach(btn => btn.classList.remove('active'));
+                controlBtns[index].classList.add('active');
+            }
+    
+            controlBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    currentIndex = parseInt(this.dataset.index);
+                    updateSlider(currentIndex);
+                });
+            });
+    
+            leftBtn.addEventListener('click', function () {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSlider(currentIndex);
+                }
+            });
+    
+            rightBtn.addEventListener('click', function () {
+                if (currentIndex < controlBtns.length - 1) {
+                    currentIndex++;
+                    updateSlider(currentIndex);
+                }
+            });
+    
+            setInterval(function () {
+                currentIndex = (currentIndex + 1) % controlBtns.length;
+                updateSlider(currentIndex);
+            }, 3000);
+        }
+    
+        document.addEventListener('DOMContentLoaded', function () {
+            includeHTML('topArea', 'topArea.html', initSlider);
+        });
+    </script>
+    <!-- 상단영역끝 -->
+    <!-- 본문시작 -->
+     <style>        
+        /* 본문스타일 */
+        .content-container{            
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+    </style>
+     <div class="content-container">
+        <!-- 좌측메뉴시작 -->
+        <div id="leftmenuArea"></div>
+        <script> 
+            document.addEventListener('DOMContentLoaded', function () {
+                includeHTML('leftmenuArea', 'sub_4_menu.html', null);
+            });          
+        </script>
+        <!-- 좌측매뉴끝 -->
+        <!-- 본문내용시작 -->
+        <style>
+            #content-area{
+                float: right;
+                width:75%;
+
+            }
+
+            .content_title{
+                font-size:40px;
+                color:blue;
+                text-align: center;
+
+            }
+            .bottom_line{
+                border-bottom: 5px solid #c1c1c1;
+            }
+            
+            .album {
+                border-top: 1px solid green;
+            }
+            .album td{
+                padding:5px;
+                border-bottom: 1px solid green;
+            }            
+        </style>
+        <div id="content-area">
+            <div class="content_title">특별함</div>
+            <div class="bottom_line"></div>
+            <div id="article" class="content">
+                <h3>사계절 낭만이 있는 곳에서 행복한 추억을 많이 만들어 가세요</h3>
+                <table class="album" border="0" cellspacing="0" cellpadding="0" width="100%">
+                    <tr>
+                        <td>
+                            <a href="#"><img alt="" src="img/20151227165633_1192539526.jpg" width="200" height="120" border="0"></a>
+                        </td>
+                        <td>
+                            <a href="#">
+                            비가 오나 눈이 오나 걱정없는 실내 바비큐장에서 사계절 편안하게 드세요~본 내용은 샘플로 작성되었으며 추후에 관리자가 펜션에 맞게 직접 내용을 등록하실 수 있습니다.  감사합니다.
+                            </a>
+                            <div align="right">[<font style="color:#878787;font-size:12px;">작성일자 : 2015-12-27</font>, <font style="color:#878787;font-size:12px;">조회수 : 51</font>]</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#"><img alt="" src="img/20151227165633_1192539526.jpg" width="200" height="120" border="0"></a>
+                        </td>
+                        <td>
+                            <a href="#">
+                            비가 오나 눈이 오나 걱정없는 실내 바비큐장에서 사계절 편안하게 드세요~본 내용은 샘플로 작성되었으며 추후에 관리자가 펜션에 맞게 직접 내용을 등록하실 수 있습니다.  감사합니다.
+                            </a>
+                            <div align="right">[<font style="color:#878787;font-size:12px;">작성일자 : 2015-12-27</font>, <font style="color:#878787;font-size:12px;">조회수 : 51</font>]</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#"><img alt="" src="img/20151227165633_1192539526.jpg" width="200" height="120" border="0"></a>
+                        </td>
+                        <td>
+                            <a href="#">
+                            비가 오나 눈이 오나 걱정없는 실내 바비큐장에서 사계절 편안하게 드세요~본 내용은 샘플로 작성되었으며 추후에 관리자가 펜션에 맞게 직접 내용을 등록하실 수 있습니다.  감사합니다.
+                            </a>
+                            <div align="right">[<font style="color:#878787;font-size:12px;">작성일자 : 2015-12-27</font>, <font style="color:#878787;font-size:12px;">조회수 : 51</font>]</div>
+                               
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>  
+        <!-- 본문내용끝       -->
+     </div>
+    <!-- 본문끝 -->
+    <!-- 하단시작 -->
+    <div id="bottomArea"></div>
+    <script>        
+        document.addEventListener('DOMContentLoaded', function () {
+            includeHTML('bottomArea', 'bottomArea.html', null);
+        });
+     </script>
+    <!-- 하단끝 -->
+    </div>
+    <!-- --wrap끝----- -->
+
+
+
+
+</body>
+
+</html>
